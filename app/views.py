@@ -9,8 +9,12 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django import forms
+from app.models import HeadlineArticle
 
 
 # Create your views here.
 class IndexView(TemplateView):
     template_name = 'index.html'
+
+class RSSfeedView(ListView):
+    model = HeadlineArticle

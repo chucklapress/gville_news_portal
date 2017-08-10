@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Welcome to Greenville News Feed</title>
+    <link rel = "stylesheet" href ={% static "app/css/bootstrap.css"%}>
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+        <ul class="nav nav-pills">
+      <li role="presentation" class="active"><a href="{% url 'index_view' %}">Home</a></li>
+      <li role="presentation"><a href="{%url 'rss_feed_view'%}?next=/">Headlines</a></li>
+      <li role="presentation"><a href="{%url 'local_feed_view'%}?next=/">Local News</a></li>
+      <li role="presentation"><a href="{%url 'sports_feed_view'%}?next=/">Sports News</a></li>
+      <li role="presentation"><a href="{%url 'money_feed_view'%}?next=/">Business News</a></li>
+    </div>
+  </nav>
+  </head>
+
+  <body>
+
+      {% block content %}
+
+      {% endblock %}
+
+  </body>
+
+</html>

@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>MONEY FEED</title>
-  </head>
-  <body>
-    <div class="container">
-<br>
-<br>
-<br>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div class="container">
 <h4>Todays Business Stories:</h4>
 
 {% for object in object_list %}
@@ -27,8 +22,5 @@
 <br>
 
 {% endfor %}
-
 </div>
-
-  </body>
-</html>
+{% endblock %}

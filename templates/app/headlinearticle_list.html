@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>RSS FEED</title>
-  </head>
-  <body>
-    <div class="container">
-<br>
-<br>
-<br>
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block content %}
+<div class="container">
 <h4>Todays Stories:</h4>
 
 {% for object in object_list %}
@@ -31,6 +26,4 @@
 {% endfor %}
 
 </div>
-
-  </body>
-</html>
+{% endblock %}

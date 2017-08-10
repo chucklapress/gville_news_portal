@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from app.views import IndexView, RSSfeedView, SportsfeedView, MoneyfeedView, LocalfeedView
+from app.views import IndexView, RSSfeedView, SportsfeedView, MoneyfeedView, LocalfeedView, HeadlineCreateView, LocalArticleCreateView, SportsArticleCreateView, BusinessArticleCreateView
 from django.conf.urls.static import static
 from django.conf import settings
 from app import views
@@ -29,5 +29,9 @@ urlpatterns = [
     url(r'^sports_feed/$', SportsfeedView.as_view(), name='sports_feed_view'),
     url(r'^money_feed/$', MoneyfeedView.as_view(), name='money_feed_view'),
     url(r'^local_feed/$', LocalfeedView.as_view(), name='local_feed_view'),
+    url(r'^headline_create/$',HeadlineCreateView.as_view(), name='headline_create_view'),
+    url(r'^local_create/$',LocalArticleCreateView.as_view(), name='local_create_view'),
+    url(r'^sports_create/$',SportsArticleCreateView.as_view(), name='sports_create_view'),
+    url(r'^business_create/$',BusinessArticleCreateView.as_view(), name='business_create_view'),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

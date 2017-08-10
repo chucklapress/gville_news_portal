@@ -9,7 +9,7 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django import forms
-from app.models import HeadlineArticle, SportsArticle
+from app.models import HeadlineArticle, SportsArticle, BusinessArticle
 
 
 # Create your views here.
@@ -21,3 +21,6 @@ class RSSfeedView(ListView):
 
 class SportsfeedView(ListView):
     model = SportsArticle
+
+class MoneyfeedView(ListView):
+    model = BusinessArticle

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LOCAL FEED</title>
+  </head>
+  <body>
+    <div class="container">
+<br>
+<br>
+<br>
+<h4>Todays Local Stories:</h4>
+
+{% for object in object_list %}
+<br>
+<br>
+<br>
+<br>
+
+<h5>Todays top Local story, {{ object.top_local_today }}</h5>
+<br>
+<br>
+<h5>Todays second story, {{ object.other_local_today }}</h5>
+<br>
+<br>
+<br>
+<br>
+
+{% endfor %}
+
+</div>
+
+  </body>
+</html>

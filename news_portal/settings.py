@@ -111,6 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.9/topics/i18n
 STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

@@ -25,8 +25,6 @@ from rest_framework.authtoken import views
 from portalapi.views import RSSfeedAPIView, RSSfeedDetailAPIView
 
 
-
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^', include('django.contrib.auth.urls')),

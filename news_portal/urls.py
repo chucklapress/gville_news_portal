@@ -21,6 +21,8 @@ from django.conf import settings
 from app import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls import url, include
+from rest_framework.authtoken import views
+from portalapi.views import RSSfeedAPIView, RSSfeedDetailAPIView
 
 
 
@@ -28,6 +30,7 @@ from django.conf.urls import url, include
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^', include('django.contrib.auth.urls')),
+    url(r'^api-token-auth/', views.obtain_auth_token),
     url(r'^$', IndexView.as_view(), name='index_view'),
     url(r'^rss_feed/$', RSSfeedView.as_view(), name='rss_feed_view'),
     url(r'^sports_feed/$', SportsfeedView.as_view(), name='sports_feed_view'),
@@ -37,5 +40,7 @@ urlpatterns = [
     url(r'^local_create/$',LocalArticleCreateView.as_view(), name='local_create_view'),
     url(r'^sports_create/$',SportsArticleCreateView.as_view(), name='sports_create_view'),
     url(r'^business_create/$',BusinessArticleCreateView.as_view(), name='business_create_view'),
+    url(r'^api/headlines/$', RSSfeedAPIView.as_view(), name="rss_feed_api_view"),
+    url(r'^api/headlines/(?P<pk>\d+)/$', RSSfeedDetailAPIView.as_view(), name="rss_feed_detail_api_view")
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -40,7 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'storages'
+    'storages',
+    'rest_framework',
+    'rest_framework.authtoken',
+    'portalapi'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -146,3 +149,17 @@ if AWS_STORAGE_BUCKET_NAME:
    STATICFILES_LOCATION = 'static'
    STATIC_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
    STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+
+
+
+    )
+}
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    )
+}

@@ -22,10 +22,10 @@ class RSSfeedView(ListView):
 class SportsfeedView(ListView):
     model = SportsArticle
 
-class MoneyfeedView(ListView):
+class CommunityfeedView(ListView):
     model = BusinessArticle
 
-class LocalfeedView(ListView):
+class PostandCourierView(ListView):
     model = LocalArticle
 
 class HeadlineCreateView(CreateView):
@@ -33,12 +33,12 @@ class HeadlineCreateView(CreateView):
     fields = ['top_stories_today']
     success_url = '/'
 
-class BusinessArticleCreateView(CreateView):
+class CommunityPublicationsCreateView(CreateView):
     model = BusinessArticle
     fields = ['top_business_today']
     success_url = '/'
 
-class LocalArticleCreateView(CreateView):
+class PostandCourierCreateView(CreateView):
     model = LocalArticle
     fields = ['top_local_today']
     success_url = '/'

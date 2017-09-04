@@ -12,6 +12,8 @@ class HeadlineArticle(models.Model):
 
 class LocalArticle(models.Model):
     top_local_today = models.TextField(max_length=None)
+    second_PandC_story = models.TextField(max_length=None, blank=True)
+    third_PandC_story = models.TextField(max_length=None, blank=True)
     def __str__(self):
         return self.top_local_today
 
@@ -22,5 +24,7 @@ class SportsArticle(models.Model):
 
 class BusinessArticle(models.Model):
     top_business_today = models.TextField(max_length=None)
+    second_community_story = models.TextField(max_length=None, blank=True)
+    third_community_story = models.TextField(max_length=None, blank=True)
     def __str__(self):
         return self.top_business_today

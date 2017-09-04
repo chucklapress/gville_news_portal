@@ -35,12 +35,12 @@ class HeadlineCreateView(CreateView):
 
 class CommunityPublicationsCreateView(CreateView):
     model = BusinessArticle
-    fields = ['top_business_today']
+    fields = ['top_business_today','second_community_story','third_community_story']
     success_url = '/'
 
 class PostandCourierCreateView(CreateView):
     model = LocalArticle
-    fields = ['top_local_today']
+    fields = ['top_local_today','second_PandC_story','third_PandC_story']
     success_url = '/'
 
 class SportsArticleCreateView(CreateView):

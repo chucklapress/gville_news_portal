@@ -22,7 +22,7 @@ from app import views
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls import url, include
 from rest_framework.authtoken import views
-from portalapi.views import RSSfeedAPIView, RSSfeedDetailAPIView
+from portalapi.views import RSSfeedAPIView, RSSfeedDetailAPIView, PostNCourierAPIView, PostNCourierDetailAPIView
 
 
 urlpatterns = [
@@ -39,6 +39,9 @@ urlpatterns = [
     url(r'^sports_create/$',SportsArticleCreateView.as_view(), name='sports_create_view'),
     url(r'^community_create/$',CommunityPublicationsCreateView.as_view(), name='community_create_view'),
     url(r'^api/headlines/$', RSSfeedAPIView.as_view(), name="rss_feed_api_view"),
-    url(r'^api/headlines/(?P<pk>\d+)/$', RSSfeedDetailAPIView.as_view(), name="rss_feed_detail_api_view")
+    url(r'^api/headlines/(?P<pk>\d+)/$', RSSfeedDetailAPIView.as_view(), name="rss_feed_detail_api_view"),
+    url(r'^api/postncourier/$', PostNCourierAPIView.as_view(), name="postncourier_api_view"),
+    url(r'^api/postncourier/(?P<pk>\d+)/$', PostNCourierDetailAPIView.as_view(), name="postncourier_detail_api_view")
+
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

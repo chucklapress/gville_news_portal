@@ -36,4 +36,4 @@ class PostNCourierSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         if "user" in validated_data:
             del validated_data["user"]
-        return HeadlineArticle.objects.create(**validated_data)
+        return LocalArticle.objects.create(**validated_data)

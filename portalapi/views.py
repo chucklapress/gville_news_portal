@@ -36,13 +36,13 @@ class RSSfeedDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
 
 class PostNCourierAPIView(generics.ListCreateAPIView):
     queryset = LocalArticle.objects.all()
-    serializer_class = RSSfeedSerializer
+    serializer_class = PostNCourierSerializer
 
     def get_queryset(self):
         return HeadlineArticle.objects.all()
 
 class PostNCourierDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = LocalArticle.objects.all()
-    serializer_class = RSSfeedSerializer
+    serializer_class = PostNCourierSerializer
     permission_classes = (permissions.IsAuthenticatedOrReadOnly,
                       IsOwnerOrReadOnly,)

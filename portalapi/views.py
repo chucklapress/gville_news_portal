@@ -39,7 +39,7 @@ class PostNCourierAPIView(generics.ListCreateAPIView):
     serializer_class = PostNCourierSerializer
 
     def get_queryset(self):
-        return HeadlineArticle.objects.all()
+        return LocalArticle.objects.all()
 
 class PostNCourierDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = LocalArticle.objects.all()
